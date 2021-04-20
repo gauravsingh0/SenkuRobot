@@ -72,43 +72,63 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+ASUNA_IMG =  "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg"
+
 
 PM_START_TEXT = """
-Hello! I am *Senku*.
-I'm here to help you manage your groups! Hit *📚Commands* button below to find out more about how to use me to my full potential[.](https://telegra.ph/file/418fe04d27f1fb02788e3.png)
+`Hi {}, my name is {}! 
+I am an Anime themed group management bot.
+Build by weebs for weebs, I specialize in managing anime and similar themed groups.
+You can find my list of available commands with /help.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ Add Me 🔘", url="t.me/SenkuRoBot?startgroup=true"),
-    ],
-    [
-        InlineKeyboardButton(text="ℹ️ About", callback_data="masha_"),
-        InlineKeyboardButton(text="📚 Commands", callback_data="help_back"),
-    ],
-    [
-        InlineKeyboardButton(
-            text="💾 Source", callback_data="source_"),
-        InlineKeyboardButton(
-            text="🔔 News", url="https://t.me/SenkuNews"
-        ),
+                             text="Support Group",
+                             url=f"https://t.me/AsunaRobotSupport"),
+                         InlineKeyboardButton(
+                             text="Update Channel",
+                             url="https://t.me/AsunaLogUpdate"), 
+                     ],
+                     [
+                         InlineKeyboardButton(
+                             text="FireWorldEntertainment Chat Group",
+                             url="https://t.me/fire_world_entertainment"), 
+                     ],
+                     [
+                         InlineKeyboardButton(
+                             text="Help Center.",
+                             url="https://t.me/helpcentrebot1"), 
+                     
+
+
+
+                      ],
+                      [
+                         InlineKeyboardButton(
+                             text="My Master.",
+                             url="https://t.me/The_Ghost_Hunter"
+             ),
     ],
 ]
 
 
 HELP_STRINGS = """
-*『HELP BUTTONS HERE』 *
-
-• `/help`*:* PM's you this message[.](https://telegra.ph/file/418fe04d27f1fb02788e3.png)
- • `/help` `<module name>`*:* PM's you info about that module.
- • `/settings`*:*
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
-"""
+Hey there! My name is *{}*.
+I'm a Eldian and help admins manage their groups with Some Powerful Titans! Have a look at the following for an idea of some of \
+the things I can help you with.
 
 
-DONATE_STRING = """No need ! I'm rich OwO"""
+
+*『HELP BUTTONS HERE』*"""
+
+
+DONATE_STRING = """Heya, glad to hear you want to donate!
+Saitama is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
+You can donate to the original writer of the Base code, Paul
+There are two ways of supporting him; [Telegram](http://t.me/The_Ghost_Hunter)."""
+
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -353,20 +373,16 @@ def Masha_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "masha_":
         query.message.edit_text(
-            text="""⚡️ I'm *Senku*, a powerful group management bot built to help you manage your group easily.
-
-• I can restrict users.
-• I can greet users with customizable welcome messages and even set a group's rules.
-• I have an advanced anti-flood system.
-• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-• I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-• I check for admins' permissions before executing any command and more stuffs.
-
-_Senku's licensed under the GNU General Public License v3.0_
-
-Here is the [💾 Repository](https://github.com/FtSasaki/SenkuRobot).
-
-If you have any question about Senku, let us know at @SenkuSupport.""",
+            text=""" ℹ️ I'm *MASHA*, a powerful group management bot built to help you manage your group easily.
+                 ❍ I can restrict users.
+                 ❍ I can greet users with customizable welcome messages and even set a group's rules.
+                 ❍ I have an advanced anti-flood system.
+                 ❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 ❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 ❍ I check for admins' permissions before executing any command and more stuffs
+                 \n_Masha's licensed under the GNU General Public License v3.0_
+                 Here is the [💾Repository](https://github.com/Mr-Dark-Prince/MashaRoBot).
+                 If you have any question about Masha, let us know at @WasteBots.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -392,8 +408,8 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hey there! I'm *SenkuRobot*
-                 \nHere is the 💾 [Source Code](https://github.com/FtSasaki/SenkuRobot) .""",
+            text=""" Hi..🤗 I'm *MASHA*
+                 \nHere is the [Source Code](https://github.com/Mr-Dark-Prince/MashaRoBot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
             reply_markup=InlineKeyboardMarkup(
@@ -688,7 +704,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Get Excited OwO!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
