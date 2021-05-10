@@ -18,12 +18,12 @@ from telegram.ext import CallbackContext, CommandHandler, run_async
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        update.effective_message.reply_text(f"Current state: {MashaRoBot.ALLOW_CHATS}")
+        update.effective_message.reply_text(f"Current state: {YoneRobot.ALLOW_CHATS}")
         return
     if args[0].lower() in ["off", "no"]:
-        MashaRoBot.ALLOW_CHATS = True
+        YoneRobot.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        MashaRoBot.ALLOW_CHATS = False
+        YoneRobot.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
@@ -90,5 +90,5 @@ dispatcher.add_handler(LEAVE_HANDLER)
 dispatcher.add_handler(GITPULL_HANDLER)
 dispatcher.add_handler(RESTART_HANDLER)
 
-__mod_name__ = "Dev"
+__mod_name__ = "Devs"
 __handlers__ = [LEAVE_HANDLER, GITPULL_HANDLER, RESTART_HANDLER, ALLOWGROUPS_HANDLER]
