@@ -77,29 +77,29 @@ ASUNA_IMG =  "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg"
 
 PM_START_TEXT = """
 `Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-Build by weebs for weebs, I specialize in managing anime and similar themed groups.
-You can find my list of available commands with /help.
+A Highly advanced bot.
+Having a lots of Amazing tools.
+I'm here to help u manage your Groups! Hit /help.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-                             text="Support Group",
-                             url=f"https://t.me/AsunaRobotSupport"),
+                             text="SUPPORT CHAT",
+                             url=f"https://t.me/yone_support_official"),
                          InlineKeyboardButton(
-                             text="Update Channel",
-                             url="https://t.me/AsunaLogUpdate"), 
+                             text="UPDATES",
+                             url="https://t.me/grb_network"), 
                      ],
                      [
                          InlineKeyboardButton(
-                             text="FireWorldEntertainment Chat Group",
-                             url="https://t.me/fire_world_entertainment"), 
+                             text="FEDERATION",
+                             url="https://t.me/gaurboofedration"), 
                      ],
                      [
                          InlineKeyboardButton(
-                             text="Help Center.",
-                             url="https://t.me/helpcentrebot1"), 
+                             text="HELP CENTER.",
+                             url="https://t.me/yone_support_official"), 
                      
 
 
@@ -107,8 +107,8 @@ buttons = [
                       ],
                       [
                          InlineKeyboardButton(
-                             text="My Master.",
-                             url="https://t.me/The_Ghost_Hunter"
+                             text="OWNER.",
+                             url="https://t.me/Black_heart_hacker_xon"
              ),
     ],
 ]
@@ -116,8 +116,8 @@ buttons = [
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a Eldian and help admins manage their groups with Some Powerful Titans! Have a look at the following for an idea of some of \
-the things I can help you with.
+Click on the buttons to get documentation about a specific module \
+All commands can either be used with / or !.
 
 
 
@@ -125,9 +125,9 @@ the things I can help you with.
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Saitama is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
+This is hosted on one of grb Servers and doesn't require any donations as of now but \
 You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [Telegram](http://t.me/The_Ghost_Hunter)."""
+There are two ways of supporting him; [Telegram](http://t.me/Black_heart_hacker_xon)."""
 
 
 IMPORTED = {}
@@ -373,16 +373,16 @@ def Masha_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "masha_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *MASHA*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *⚡【𝐆】【𝐔】【𝐄】【𝐒】【𝐓】⚡*, a powerful group management bot built to help you manage your group easily.
                  ❍ I can restrict users.
                  ❍ I can greet users with customizable welcome messages and even set a group's rules.
                  ❍ I have an advanced anti-flood system.
                  ❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
                  ❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  ❍ I check for admins' permissions before executing any command and more stuffs
-                 \n_Masha's licensed under the GNU General Public License v3.0_
-                 Here is the [💾Repository](https://github.com/Mr-Dark-Prince/MashaRoBot).
-                 If you have any question about Masha, let us know at @WasteBots.""",
+                 \n_⚡【𝐆】【𝐔】【𝐄】【𝐒】【𝐓】⚡'s licensed under the GNU General Public License v3.0_
+                 Here is the [💾Repository](https://github.com/gauravsingh0/GUEST).
+                 If you have any question about ⚡【𝐆】【𝐔】【𝐄】【𝐒】【𝐓】⚡, let us know at Support chat.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -408,8 +408,8 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *MASHA*
-                 \nHere is the [Source Code](https://github.com/Mr-Dark-Prince/MashaRoBot) .""",
+            text=""" Hi..🤗 I'm *⚡【𝐆】【𝐔】【𝐄】【𝐒】【𝐓】⚡*
+                 \nHere is the [Source Code](https://github.com/gauravsingh0/GUEST) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
             reply_markup=InlineKeyboardMarkup(
@@ -704,7 +704,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 🥰")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
