@@ -115,8 +115,8 @@ buttons = [
 
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-Click on the buttons to get documentation about a specific module \
+Hey there! My name is *⚡【𝐆】【𝐔】【𝐄】【𝐒】【𝐓】⚡*.
+Click on the buttons to get documentations about a specific module \
 All commands can either be used with / or !.
 
 
